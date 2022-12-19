@@ -3,7 +3,7 @@ import './App.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-//EC: Import own componets
+//EC: Import our componets
 import ShowPatients from './components/ShowPatients';
 import CreatePatient from './components/CreatePatient';
 import EditPatient from './components/EditPatient';
@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={ <ShowPatients/>} />
+          <Route path='/' element={ <ShowPatients/> } />
           <Route path='/create' element={ <CreatePatient/>}/>
           <Route path='/edit/:id' element={ <EditPatient/>}/>
         </Routes>

@@ -10,14 +10,13 @@ const CreatePatient = () => {
     //EC: Initialize vriables
     const [lastName, setLastName] = useState('')
     const [firstName, setFirstName] = useState('')
-    const [phoneNumber, setPhoneNUmber] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
     const [address, setAddress] = useState('')
     const [insurance, setInsurance] = useState(0)
     const [personalID, setPersonalID] = useState('')
     const [country, setCountry] = useState('')
     const [email, setEmail] = useState('')
     const [birthDay, setBirthDay] = useState('2022-06-15')
-
     const navigate = useNavigate()
 
     const store = async (e) => {
@@ -33,7 +32,7 @@ const CreatePatient = () => {
             patEmail: email,
             patBirthDay: birthDay
         })
-        navigate('/')
+        navigate('/') //EC: Return root component
     }
 
   return (
@@ -62,7 +61,7 @@ const CreatePatient = () => {
           <label className='form-label'>Telefono</label>
           <input
             value={phoneNumber}
-            onChange={ (e) => setPhoneNUmber(e.target.value)}
+            onChange={ (e) => setPhoneNumber(e.target.value)}
             type="text"
             className='form-control'
           />

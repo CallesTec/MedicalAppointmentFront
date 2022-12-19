@@ -11,7 +11,7 @@ const ShowPatients = () => {
     //Hook: var       varfunction     start in: []  (EC)
     const [ patients, setPatients ] = useState( [] )
 
-    //Hook: effect, do something after renderizing (EC)
+    //Hook: effect, do something after rendering (EC)
     useEffect ( ()=> {
         getAllPatients()
     }, [])//Stop infinite bucle
@@ -20,11 +20,10 @@ const ShowPatients = () => {
         //EC: Get all patient
         const response = await axios.get(`${endpoint}/patients`)
         setPatients(response.data)
-        console.log(response)
+        //console.log(response.data) //EC: Only for view response.data in browser terminal
     }
 
     const deletePatient = async (id) => {
-        //EC: Delete a patient
         await axios.delete(`${endpoint}/patients/${id}`)
         getAllPatients()
     }
@@ -50,9 +49,9 @@ const ShowPatients = () => {
                             <td> {patient.patLastName} </td>
                             <td> {patient.patPhoneNumber} </td>
                             <td> {patient.patEmail} </td>
-                            <td> 
+                            <td>
                                 <Link to={`/edit/${patient.id}`} className='btn btn-warning'>Editar</Link>
-                                <button onCLick={ ()=>deletePatient(patient.id) } className='btn btn-danger'>Borrar</button>
+                                <button onClick={ () => deletePatient(patient.id) } className='btn btn-danger'>Borrar</button> 
                             </td>
                         </tr>
                     ))}
