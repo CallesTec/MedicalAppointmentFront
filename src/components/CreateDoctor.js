@@ -35,7 +35,7 @@ const CreateDoctor = () => {
         <div className='mb-3'>
           <label className='form-label'>Last Name</label>
           <input
-            value={drlastName}
+            value={drLastName}
             onChange={ (e) => setdrLastName(e.target.value)}
             type="text"
             className='form-control'
@@ -44,7 +44,7 @@ const CreateDoctor = () => {
         <div className='mb-3'>
           <label className='form-label'>First Name</label>
           <input
-            value={drfirstName}
+            value={drFirstName}
             onChange={ (e) => setdrFirstName(e.target.value)}
             type="text"
             className='form-control'
