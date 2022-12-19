@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 //EC: create a specific route to access doctors in the API
-const endpoint = 'http://localhost:8000/api/patients'
+const endpoint = 'http://localhost:8000/api/clinics'
 
 const CreateClinic = () => {
     //EC: Initialize vriables
