@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 
+import axios from "axios";
+
 import {
+  endpoint,
   getAllAppointments,
-  deleteAppointment,
   getAllDoctors,
   getAllPatients,
   getAllClinics,
@@ -36,6 +38,11 @@ const ShowAppointments = () => {
       setClinics(response);
     });
   }, []);
+
+
+  const deleteAppointment = async (id) => {
+    await axios.delete(`${endpoint}/appointments/${id}`);
+  };
 
   return (
     <div>

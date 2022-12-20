@@ -2,19 +2,19 @@ import './App.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-//EC: Import own componets
+//EC: Import own components
 import ShowPatients from './components/ShowPatients';
 import CreatePatient from './components/CreatePatient';
 import EditPatient from './components/EditPatient';
-import ShowClinics from './components/ShowClinics';
-import CreateClinic from './components/CreateClinic';
-import EditClinic from './components/EditClinic';
-import ShowDoctors from './components/ShowDoctors';
-import CreateDoctor from './components/CreateDoctor';
-import EditDoctor from './components/EditDoctor';
-import ShowAppointment from './components/ShowAppointment';
-import CreateAppointment from './components/CreateAppointment';
-import EditAppointment from './components/EditAppointment';
+import ShowClinics from './components/ClinicComponents/ShowClinics';
+import CreateClinic from './components/ClinicComponents/CreateClinic';
+import EditClinic from './components/ClinicComponents/EditClinic';
+import ShowDoctors from './components/DoctorComponents/ShowDoctors';
+import CreateDoctor from './components/DoctorComponents/CreateDoctor';
+import EditDoctor from './components/DoctorComponents/EditDoctor';
+import ShowAppointment from './components/AppointmentComponents/ShowAppointment';
+import CreateAppointment from './components/AppointmentComponents/CreateAppointment';
+import EditAppointment from './components/AppointmentComponents/EditAppointment';
 import ShowHours from './components/HourComponents/ShowHours';
 import CreateHour from './components/HourComponents/CreateHour';
 import EditHour from './components/HourComponents/EditHour';
