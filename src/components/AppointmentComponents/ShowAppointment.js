@@ -24,7 +24,7 @@ const ShowAppointments = () => {
     <div>
       <div className="d-grid gap-2">
         <Link
-          to="/create-appointment"
+          to="/createAppointment"
           className="btn btn-success btn-lg mt-2 mb-2 text-white"
         >
           Create
@@ -50,7 +50,7 @@ const ShowAppointments = () => {
                 <td>{appointment.apDate}</td>
                 <td>{appointment.apReason}</td>
                 <td>
-                  <Link to={`/edit/${appointment.id}`} className="btn btn-warning">
+                  <Link to={`/editAppointment/${appointment.id}`} className="btn btn-warning">
                     Editar
                   </Link>
                   <button
