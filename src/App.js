@@ -24,28 +24,28 @@ import Home from './components/Home';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter> 
+      <BrowserRouter>
         <Routes>
-          <Route path='/' element={ <Home/>} />
-          <Route path='/show' element={ <ShowPatients/>} />
-          <Route path='/create' element={ <CreatePatient/>}/>
-          <Route path='/edit/:id' element={ <EditPatient/>}/>
+          <Route path='/' element={<Home />} />
+          <Route path='/show' element={<ShowPatients />} />
+          <Route path='/create' element={<CreatePatient />} />
+          <Route path='/edit/:id' element={<EditPatient />} />
 
-          <Route path='/showClinic' element={ <ShowClinics/>} />
-          <Route path='/createClinic' element={ <CreateClinic/>}/>
-          <Route path='/editClinic/:id' element={ <EditClinic/>}/>
+          <Route path='/showClinics' element={<ShowClinics />} />
+          <Route path='/createClinic' element={<CreateClinic />} />
+          <Route path='/editClinic/:id' element={<EditClinic />} />
 
-          <Route path='/showDoctors' element={ <ShowDoctors/>} />
-          <Route path='/createDoctor' element={ <CreateDoctor/>}/>
-          <Route path='/editDoctor/:id' element={ <EditDoctor/>}/>
+          <Route path='/showDoctors' element={<ShowDoctors />} />
+          <Route path='/createDoctor' element={<CreateDoctor />} />
+          <Route path='/editDoctor/:id' element={<EditDoctor />} />
 
-          <Route path='/showAppointment' element={ <ShowAppointment/>} />
-          <Route path='/createAppointment' element={ <CreateAppointment/>}/>
-          <Route path='/editAppointment/:id' element={ <EditAppointment/>}/>
+          <Route path='/showAppointment' element={<ShowAppointment />} />
+          <Route path='/createAppointment' element={<CreateAppointment />} />
+          <Route path='/editAppointment/:id' element={<EditAppointment />} />
 
-          <Route path='/showHour' element={ <ShowHours/>} />
-          <Route path='/createHour' element={ <CreateHour/>}/>
-          <Route path='/editHour/:id' element={ <EditHour/>}/>
+          <Route path='/showHour' element={<ShowHours />} />
+          <Route path='/createHour' element={<CreateHour />} />
+          <Route path='/editHour/:id' element={<EditHour />} />
         </Routes>
       </BrowserRouter>
     </div>
