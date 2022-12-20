@@ -1,24 +1,41 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+
 import { Link } from "react-router-dom";
 
-const endpoint = "http://localhost:8000/api";
+import {
+  getAllAppointments,
+  deleteAppointment,
+  getAllDoctors,
+  getAllPatients,
+  getAllClinics,
+} from "../../shared/services";
+
 const ShowAppointments = () => {
   const [appointments, setAppointments] = useState([]);
 
+  const [doctor, setDoctor] = useState([]);
+
+  const [patient, setPatient] = useState([]);
+
+  const [clinics, setClinics] = useState([]);
+
   useEffect(() => {
-    getAllAppointments();
+    getAllAppointments().then((response) => {
+      setAppointments(response);
+    });
+
+    getAllDoctors().then((response) => {
+      setDoctor(response);
+    });
+
+    getAllPatients().then((response) => {
+      setPatient(response);
+    });
+
+    getAllClinics().then((response) => {
+      setClinics(response);
+    });
   }, []);
-
-  const getAllAppointments = async () => {
-    const response = await axios.get(`${endpoint}/appointments`);
-    setAppointments(response.data);
-  };
-
-  const deleteAppointment = async (id) => {
-    await axios.delete(`${endpoint}/appointments/${id}`);
-    getAllAppointments();
-  };
 
   return (
     <div>
@@ -34,25 +51,58 @@ const ShowAppointments = () => {
           <thead className="bg-primary text-white">
             <tr>
               <th>Clinica ID</th>
-              <th>Paciente ID</th>
-              <th>Doctor ID</th>
+
+              <th>Paciente</th>
+
+              <th>Doctor</th>
+
               <th>Fecha de cita</th>
+
               <th>Motivo</th>
+
               <th>Acciones</th>
             </tr>
           </thead>
+
           <tbody>
             {appointments.map((appointment) => (
               <tr key={appointment.id}>
-                <td>{appointment.clinic_id}</td>
-                <td>{appointment.patient_id}</td>
-                <td>{appointment.doctor_id}</td>
-                <td>{appointment.apDate}</td>
-                <td>{appointment.apReason}</td>
                 <td>
-                  <Link to={`/editAppointment/${appointment.id}`} className="btn btn-warning">
+                  {clinics.map((clinics) => {
+                    if (clinics.id === appointment.clinic_id) {
+                      return clinics.cliName;
+                    }
+                  })}
+                </td>
+
+                <td>
+                  {patient.map((patient) => {
+                    if (patient.id === appointment.patient_id) {
+                      return patient.patFirstName;
+                    }
+                  })}
+                </td>
+
+                <td>
+                  {doctor.map((doctor) => {
+                    if (doctor.id === appointment.doctor_id) {
+                      return doctor.drFirstName;
+                    }
+                  })}
+                </td>
+
+                <td>{appointment.apDate}</td>
+
+                <td>{appointment.apReason}</td>
+
+                <td>
+                  <Link
+                    to={`/editAppointment/${appointment.id}`}
+                    className="btn btn-warning"
+                  >
                     Editar
                   </Link>
+
                   <button
                     onClick={() => deleteAppointment(appointment.id)}
                     className="btn btn-danger"
@@ -68,4 +118,5 @@ const ShowAppointments = () => {
     </div>
   );
 };
+
 export default ShowAppointments;
