@@ -13,12 +13,12 @@ import {
 //EC: create a basic route ta access the API
 
 const ShowHours = () => {
-  //Hook: var       varfunction     start in: []  (EC)
+  
   const [hours, setHours] = useState([])
   const [doctor, setDoctor] = useState([])
   const [clinics, setClinics] = useState([])
 
-  //Hook: effect, do something after rendering (EC)
+  /
   useEffect(() => {
     getAllHours().then((response) => {
       setHours(response);
@@ -30,7 +30,7 @@ const ShowHours = () => {
       setDoctor(response);
     });
 
-  }, [])//Stop infinite bucle
+  }, [])
 
 
 
