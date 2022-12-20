@@ -31,7 +31,7 @@ const EditPatient = () => {
             patEmail: email,
             patBirthDay: birthDay
         })
-        navigate('/') //EC: Return root component
+        navigate('/show') //EC: Return root component
     }
 
     useEffect( () =>{

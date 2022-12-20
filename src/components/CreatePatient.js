@@ -32,7 +32,7 @@ const CreatePatient = () => {
             patEmail: email,
             patBirthDay: birthDay
         })
-        navigate('/') //EC: Return root component
+        navigate('/show') //EC: Return root component
     }
 
   return (
