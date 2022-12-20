@@ -22,7 +22,7 @@ const EditHour = () => {
         startHour: startHour,
         endHour: endHour
       })
-      navigate('/') //EC: Return root component
+      navigate('/showHour') //EC: Return root component
     }
 
     useEffect( () =>{

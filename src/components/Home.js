@@ -29,6 +29,9 @@ class Home extends Component {
                         <li class="nav-item">
                         <a class="nav-link active" href="/showAppointment">Appointments</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/showHour">Schedules</a>
+                        </li>
                     </ul>
                     </div>
                 </div>

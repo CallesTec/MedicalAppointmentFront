@@ -31,7 +31,7 @@ const ShowHours = () => {
     return (
     <div>
         <div className='d-grid gap-2'>
-            <Link to='/create' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Nuevo</Link>
+            <Link to='/createHour' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Nuevo</Link>
             <table className='table table-striped'>
                 <thead className='bg-primary text-white'>
                     <tr>
@@ -50,7 +50,7 @@ const ShowHours = () => {
                             <td> {hour.startHour} </td>
                             <td> {hour.endHour} </td>
                             <td>
-                                <Link to={`/edit/${hour.id}`} className='btn btn-warning'>Editar</Link>
+                                <Link to={`/editHour/${hour.id}`} className='btn btn-warning'>Editar</Link>
                                 <button onClick={ () => deleteHour(hour.id) } className='btn btn-danger'>Borrar</button> 
                             </td>
                         </tr>

@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 //EC: create a specific route to access an hour in the API
-const endpoint = 'http://localhost:8000/api/clidrhours'
+const endpoint = 'http://localhost:8000/api/'
 
 const CreateHour = () => {
     //EC: Initialize vriables
@@ -16,13 +16,13 @@ const CreateHour = () => {
 
     const store = async (e) => {
         e.preventDefault()
-        await axios.post(endpoint, {
+        await axios.post(`${endpoint}clidrhours`, {
           clinic_id: clinic_id,
           doctor_id: doctor_id,
           startHour: startHour,
           endHour: endHour
         })
-        navigate('/') //EC: Return root component
+        navigate('/showHour') //EC: Return root component
     }
 
   return (

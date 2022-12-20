@@ -43,9 +43,9 @@ function App() {
           <Route path='/createAppointment' element={ <CreateAppointment/>}/>
           <Route path='/editAppointment/:id' element={ <EditAppointment/>}/>
 
-          <Route path='/showAppointment' element={ <ShowHours/>} />
-          <Route path='/createAppointment' element={ <CreateHour/>}/>
-          <Route path='/editAppointment/:id' element={ <EditHour/>}/>
+          <Route path='/showHour' element={ <ShowHours/>} />
+          <Route path='/createHour' element={ <CreateHour/>}/>
+          <Route path='/editHour/:id' element={ <EditHour/>}/>
         </Routes>
       </BrowserRouter>
     </div>
