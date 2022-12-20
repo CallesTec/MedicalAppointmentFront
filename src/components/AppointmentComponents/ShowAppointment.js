@@ -37,11 +37,15 @@ const ShowAppointments = () => {
     getAllClinics().then((response) => {
       setClinics(response);
     });
+
+
   }, []);
 
 
   const deleteAppointment = async (id) => {
     await axios.delete(`${endpoint}/appointments/${id}`);
+    getAllAppointments();
+    
   };
 
   return (

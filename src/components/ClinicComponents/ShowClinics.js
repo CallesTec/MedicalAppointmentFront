@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom' //EC: Link from React Route
 import { endpoint, getAllClinics } from "../../shared/services";
 
 const ShowClinics = () => {
-  //Hook: var       varfunction     start in: []  (EC)
   const [clinics, setClinics] = useState([])
 
   useEffect(() => {

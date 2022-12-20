@@ -3,27 +3,21 @@ import axios from 'axios' //EC:
 
 import { Link } from 'react-router-dom' //EC: Link from React Route
 
-//EC: create a basic route ta access the API
-const endpoint = 'http://localhost:8000/api'
+import { endpoint, getAllDoctors  } from '../../shared/services' //EC: Import endpoint from services
 
 const ShowDoctors = () => {
-  //Hook: var       varfunction     start in: []  (EC)
+  
   const [doctors, setDoctors] = useState([])
 
-  //Hook: effect, do something after renderizing (EC)
+ 
   useEffect(() => {
-    getAllDoctors()
-  }, [])//Stop infinite bucle
+    getAllDoctors().then((response) => {
+      setDoctors(response);
+    });
 
-  const getAllDoctors = async () => {
-
-    const response = await axios.get(`${endpoint}/doctors`)
-    setDoctors(response.data)
-    console.log(response)
-  }
+  }, [])
 
   const deleteDoctors = async (id) => {
-
     await axios.delete(`${endpoint}/doctors/${id}`)
     getAllDoctors()
   }
@@ -39,6 +33,7 @@ const ShowDoctors = () => {
               <th>Nombre</th>
               <th>Especialidad</th>
               <th>Telefono</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>

@@ -4,24 +4,19 @@ import axios from 'axios' //EC:
 
 import {Link} from 'react-router-dom' //EC: Link from React Route
 
-//FM: create a basic route ta access the API
-const endpoint = 'http://localhost:8000/api'
+import {endpoint,getAllDiagnostics} from '../../shared/services' //EC: Import endpoint from services
+
 
 const ShowDiagnostics = () => { 
    
     const [ diagnostics, setDiagnostics ] = useState( [] )
 
-    useEffect ( ()=> {
-        getAllDiagnostics()
-    }, [])
+    useEffect(() => {
+        getAllDiagnostics().then((response) => {
+          setDiagnostics(response);
+        })
+      }, [])
     
-    const getAllDiagnostics = async () => {
-        //FM: Get all diagnostics
-        const response = await axios.get(`${endpoint}/diagnostics`)
-        setDiagnostics(response.data)
-        
-    }
-
     const deleteDiagnostic = async (id) => {
         await axios.delete(`${endpoint}/diagnostics/${id}`)
         getAllDiagnostics()
