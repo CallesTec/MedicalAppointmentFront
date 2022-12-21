@@ -18,7 +18,11 @@ import EditAppointment from './components/AppointmentComponents/EditAppointment'
 import ShowHours from './components/HourComponents/ShowHours';
 import CreateHour from './components/HourComponents/CreateHour';
 import EditHour from './components/HourComponents/EditHour';
+import ShowDiagnostic from './components/DiagnosticComponents/ShowDiagnostic';
+import CreateDiagnostic from './components/DiagnosticComponents/CreateDiagnostic';
+import EditDiagnostic from './components/DiagnosticComponents/EditDiagnostic';
 import Home from './components/Home';
+
 
 
 function App() {
@@ -46,6 +50,11 @@ function App() {
           <Route path='/showHour' element={<ShowHours />} />
           <Route path='/createHour' element={<CreateHour />} />
           <Route path='/editHour/:id' element={<EditHour />} />
+
+          <Route path='/showDiagnostic' element={<ShowDiagnostic />} />
+          <Route path='/createDiagnostic' element={<CreateDiagnostic />} />
+          <Route path='/editDiagnostic/:id' element={<EditDiagnostic />} />
+
         </Routes>
       </BrowserRouter>
     </div>

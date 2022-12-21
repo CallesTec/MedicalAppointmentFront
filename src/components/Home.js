@@ -32,9 +32,14 @@ class Home extends Component {
                 <li class="nav-item">
                   <a class="nav-link active" href="/showHour">Schedules</a>
                 </li>
+
                 <li class="nav-item">
                   <a class="nav-link active" href="/showClinics">Clinics</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="/showDiagnostic">Diagnostic</a>
+                </li>
+                
               </ul>
             </div>
           </div>
