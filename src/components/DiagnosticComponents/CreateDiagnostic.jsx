@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const endpoint = 'http://localhost:8000/api/diagnostics'
+const endpoint = "http://localhost:8000/api"
 
 const CreateDiagnostic = () => {
 
@@ -12,10 +12,28 @@ const CreateDiagnostic = () => {
     const [diagnostic, setDiagnostic] = useState('')
     const navigate = useNavigate()
 
+    //EC: For selects Patients and Doctors
+    const [ patients, setPatients ] = useState( [] )
+    const [ doctors, setDoctors ] = useState( [] )
+
+    useEffect ( ()=> {
+        getAllPatients()
+        getAllDoctors()
+      }, [])//Stop infinite bucle
+      
+      const getAllPatients = async () => {
+        const pResponse = await axios.get(`${endpoint}/patients`)
+        setPatients(pResponse.data)
+      }
+      
+      const getAllDoctors = async () => {
+        const dResponse = await axios.get(`${endpoint}/doctors`)
+        setDoctors(dResponse.data)
+      }
 
     const store = async (e) => {
         e.preventDefault()
-        await axios.post(endpoint, {
+    await axios.post(`${endpoint}/diagnostics`, {
             patient_id : patient_id,
             doctor_id: doctor_id,
             diaDate : date,
@@ -30,21 +48,19 @@ const CreateDiagnostic = () => {
         <form onSubmit={store}>
             <div className='mb-3'>
                 <label>Paciente</label>
-                <input
-                    value={patient_id}
-                    onChange = { (e) => setPatient_id(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
+                <select className='form-control' onChange={ (e) => setPatient_id(e.target.value)} >
+                    {patients.map( (patient) => (
+                    <option key={patient.id} value={patient.id}>{patient.patFirstName} {patient.patLastName}</option>
+                    ))}
+                </select>
             </div>
             <div className='mb-3'>
                 <label>Doctor</label>
-                <input
-                    value={doctor_id}
-                    onChange = { (e) => setDoctor_id(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
+                <select className='form-control' onChange={ (e) => setDoctor_id(e.target.value)} >
+                    {doctors.map( (doctor) => (
+                    <option key={doctor.id} value={doctor.id}>{doctor.drFirstName} {doctor.drLastName}</option>
+                    ))}
+                </select>
             </div>
             <div className='mb-3'>
                 <label>Fecha</label>
