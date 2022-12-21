@@ -18,7 +18,7 @@ const ShowHours = () => {
   const [doctor, setDoctor] = useState([])
   const [clinics, setClinics] = useState([])
 
-  /
+
   useEffect(() => {
     getAllHours().then((response) => {
       setHours(response);
