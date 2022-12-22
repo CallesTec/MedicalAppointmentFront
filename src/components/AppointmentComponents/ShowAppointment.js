@@ -89,7 +89,7 @@ const ShowAppointments = () => {
                 <td>
                   {patient.map((patient) => {
                     if (patient.id === appointment.patient_id) {
-                      return patient.patFirstName;
+                      return patient.patFirstName + " " + patient.patLastName;
                     }
                   })}
                 </td>
@@ -97,7 +97,7 @@ const ShowAppointments = () => {
                 <td>
                   {doctor.map((doctor) => {
                     if (doctor.id === appointment.doctor_id) {
-                      return doctor.drFirstName;
+                      return doctor.drFirstName + " " + doctor.drLastName;
                     }
                   })}
                 </td>

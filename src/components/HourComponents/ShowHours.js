@@ -63,7 +63,7 @@ const ShowHours = () => {
                 })} </td>
                 <td> {doctor.map((doctor) => {
                   if (doctor.id === hour.doctor_id) {
-                    return doctor.drFirstName;
+                    return doctor.drFirstName + ' ' + doctor.drLastName;
                   }
                 })} </td>
                 <td> {hour.startHour} </td>

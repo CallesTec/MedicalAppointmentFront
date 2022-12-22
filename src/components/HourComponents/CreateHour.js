@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 const endpoint = 'http://localhost:8000/api'
 
 const CreateHour = () => {
-    //EC: Initialize vriables
+    //EC: Initialize variables
     const [clinic_id, setClinic_id] = useState(1)
     const [doctor_id, setDoctor_id] = useState(1)
     const [startHour, setStartHour] = useState('00:00')
