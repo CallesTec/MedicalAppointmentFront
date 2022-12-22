@@ -49,17 +49,30 @@ const ShowAppointments = () => {
   };
 
   return (
-    <div>
+    <div  className='app container  text-center' >
       <div className="d-grid gap-2">
-        <Link
-          to="/createAppointment"
-          className="btn btn-success btn-lg mt-2 mb-2 text-white"
-        >
-          Create
-        </Link>
+      <p className="lead text-center">
+        <h1>Medical Appointment System</h1>
+        </p>
+
+        <nav class=" navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+        <a class="navbar-brand text-white" href="/homeAppointment">Menú de Citas Médicas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link active text-white" aria-current="page" href="/createAppointment">Agendar una Cita Médica</a>
+        </li>
+        </ul>
+        </div>
+        </div>
+        </nav>
 
         <table className="table table-striped">
-          <thead className="bg-primary text-white">
+          <thead className="bg-dark text-white">
             <tr>
               <th>Clinica ID</th>
 
@@ -89,7 +102,7 @@ const ShowAppointments = () => {
                 <td>
                   {patient.map((patient) => {
                     if (patient.id === appointment.patient_id) {
-                      return patient.patFirstName + " " + patient.patLastName;
+                      return patient.patFirstName;
                     }
                   })}
                 </td>
@@ -97,7 +110,7 @@ const ShowAppointments = () => {
                 <td>
                   {doctor.map((doctor) => {
                     if (doctor.id === appointment.doctor_id) {
-                      return doctor.drFirstName + " " + doctor.drLastName;
+                      return doctor.drFirstName;
                     }
                   })}
                 </td>

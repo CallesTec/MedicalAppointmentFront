@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 const endpoint = 'http://localhost:8000/api'
 
 const CreateHour = () => {
-    //EC: Initialize variables
+    //EC: Initialize vriables
     const [clinic_id, setClinic_id] = useState(1)
     const [doctor_id, setDoctor_id] = useState(1)
     const [startHour, setStartHour] = useState('00:00')
@@ -46,7 +46,7 @@ const CreateHour = () => {
     }
 
   return (
-    <div>
+    <div  className="app container bg-dark text-white text-center">
       <h3>Nuevo Horario</h3>
       <form onSubmit={store}>
         <div className='mb-3'>
@@ -83,7 +83,7 @@ const CreateHour = () => {
             className='form-control'
           />
         </div>
-        <button type='submit' className='btn btn-primary'>Guardar</button>
+        <button type='submit' className='btn btn-secondary mb-3'>Guardar</button>
       </form>
     </div>
   )

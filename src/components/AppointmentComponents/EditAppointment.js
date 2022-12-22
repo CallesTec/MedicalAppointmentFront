@@ -63,7 +63,7 @@ const EditAppointments = () => {
         }, [])
 
     return (        
-        <div>
+        <div className="app container bg-dark text-white text-center" >
             <h3>Editar Cita</h3>
             <form onSubmit={update}>
                 <div className='mb-3'>
@@ -108,7 +108,7 @@ const EditAppointments = () => {
                         className='form-control'
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Actualizar</button>
+                <button type='submit' className='btn btn-secondary mb-3'>Actualizar</button>
             </form>
         </div>
     )

@@ -40,11 +40,31 @@ const ShowHours = () => {
   }
 
   return (
-    <div>
+    <div className='app container' >
+       <p className="lead text-center">
+        <h1>Medical Appointment System</h1>
+        </p>
       <div className='d-grid gap-2'>
-        <Link to='/createHour' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Nuevo</Link>
-        <table className='table table-striped'>
-          <thead className='bg-primary text-white'>
+        
+      <nav class=" navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+        <a class="navbar-brand text-white" href="/homeHour">Menú de Horarios</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link active text-white" aria-current="page" href="/createHour">Registrarse</a>
+        </li>
+        </ul>
+        </div>
+        </div>
+        </nav>
+
+        <br />
+        <table className=' bg-dark table table-striped'>
+          <thead className='bg-dark text-white'>
             <tr>
               <th>Clinica</th>
               <th>Doctor</th>
@@ -56,19 +76,19 @@ const ShowHours = () => {
           <tbody>
             {hours.map((hour) => (
               <tr key={hour.id}>
-                <td> {clinics.map((clinics) => {
+                <td className='text-white'  > {clinics.map((clinics) => {
                   if (clinics.id === hour.clinic_id) {
                     return clinics.cliName;
                   }
                 })} </td>
-                <td> {doctor.map((doctor) => {
+                <td className='text-white'  > {doctor.map((doctor) => {
                   if (doctor.id === hour.doctor_id) {
-                    return doctor.drFirstName + ' ' + doctor.drLastName;
+                    return doctor.drFirstName;
                   }
                 })} </td>
-                <td> {hour.startHour} </td>
-                <td> {hour.endHour} </td>
-                <td>
+                <td className='text-white' > {hour.startHour} </td>
+                <td  className='text-white' > {hour.endHour} </td>
+                <td className='text-white'  >
                   <Link to={`/editHour/${hour.id}`} className='btn btn-warning'>Editar</Link>
                   <button onClick={() => deleteHour(hour.id)} className='btn btn-danger'>Borrar</button>
                 </td>

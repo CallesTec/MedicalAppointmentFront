@@ -9,11 +9,9 @@ import EditPatient from './components/EditPatient';
 import ShowClinics from './components/ClinicComponents/ShowClinics';
 import CreateClinic from './components/ClinicComponents/CreateClinic';
 import EditClinic from './components/ClinicComponents/EditClinic';
-
 import ShowDoctors from './components/DoctorComponents/ShowDoctors';
 import CreateDoctor from './components/DoctorComponents/CreateDoctor';
 import EditDoctor from './components/DoctorComponents/EditDoctor';
-
 import ShowAppointment from './components/AppointmentComponents/ShowAppointment';
 import CreateAppointment from './components/AppointmentComponents/CreateAppointment';
 import EditAppointment from './components/AppointmentComponents/EditAppointment';
@@ -24,8 +22,11 @@ import ShowDiagnostic from './components/DiagnosticComponents/ShowDiagnostic';
 import CreateDiagnostic from './components/DiagnosticComponents/CreateDiagnostic';
 import EditDiagnostic from './components/DiagnosticComponents/EditDiagnostic';
 import Home from './components/Home';
-
-
+import HomePatient  from './components/HomePatient';
+import HomeDoctors  from './components/HomeDoctors';
+import HomeAppointment  from './components/HomeAppointment';
+import HomeHour  from './components/HomeHour';
+import HomeClinic from './components/HomeClinic';
 
 function App() {
   return (
@@ -33,7 +34,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          
           <Route path='/show' element={<ShowPatients />} />
           <Route path='/create' element={<CreatePatient />} />
           <Route path='/edit/:id' element={<EditPatient />} />
@@ -58,6 +58,11 @@ function App() {
           <Route path='/createDiagnostic' element={<CreateDiagnostic />} />
           <Route path='/editDiagnostic/:id' element={<EditDiagnostic />} />
 
+          <Route path='/homePatient' element={<HomePatient/>} />
+          <Route path='/homeDoctors' element={<HomeDoctors/>} /> 
+          <Route path='/homeAppointment' element={<HomeAppointment/>} /> 
+          <Route path='/homeHour' element={<HomeHour/>} /> 
+          <Route path='/homeClinic' element={<HomeClinic/>} /> 
         </Routes>
       </BrowserRouter>
     </div>

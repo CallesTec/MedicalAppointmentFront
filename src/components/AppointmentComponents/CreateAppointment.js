@@ -54,7 +54,7 @@ const store = async (e) => {
 }
 
 return (
-<div>
+<div className='app container bg-dark text-white text-center' >
   <h3>Nueva Cita</h3>
   <form onSubmit={store}> 
     <div className='mb-3'>
@@ -99,7 +99,8 @@ return (
         className='form-control'
       />
     </div>
-    <button type='submit' className='btn btn-primary'>Guardar</button>
+    <button type='submit' className='btn btn-secondary mb-3 mx-3'>Guardar</button>
+    <a href="/homeAppointment" className='btn btn-secondary  mb-3'>Regresar</a>
   </form>
 </div>
 )

@@ -29,8 +29,14 @@ const CreateDoctor = () => {
     }
 
   return (
-    <div>
+    
+    <div  className='app container bg-dark text-white text-center' >
+      <p className="lead text-center">
+        <h1>Medical Appointment System</h1>
+        </p>
+        <br/>
       <h3>Nuevo Doctor</h3>
+
       <form onSubmit={store}>
         <div className='mb-3'>
           <label className='form-label'>Last Name</label>
@@ -68,7 +74,8 @@ const CreateDoctor = () => {
             className='form-control'
           />
         </div>
-        <button type='submit' className='btn btn-primary'>Guardar</button>
+        <button type='submit' className='btn btn-secondary mx-3 mb-3'>Guardar</button>
+        <a href="/homeDoctors" className='btn btn-secondary  mb-3'>Regresar</a>
       </form>
     </div>
   )

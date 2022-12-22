@@ -39,7 +39,7 @@ const EditPatient = () => {
     }, [] )
 
     return (
-        <div>
+        <div className=" app container bg-dark text-white text-center " >
         <h3>Edit Doctor</h3>
         <form onSubmit={update}>
             <div className='mb-3'>
@@ -78,7 +78,7 @@ const EditPatient = () => {
                     className='form-control'
                 />
             </div>
-            <button type='submit' className='btn btn-primary'>Update</button>
+            <button type='submit' className='btn btn-secondary mb-3'>Update</button>
         </form>
     </div>
     )
