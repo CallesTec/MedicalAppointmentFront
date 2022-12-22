@@ -1,22 +1,42 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 //EC: create a specific route to access an hour in the API
-const endpoint = 'http://localhost:8000/api/'
+const endpoint = 'http://localhost:8000/api'
 
 const CreateHour = () => {
     //EC: Initialize vriables
-    const [clinic_id, setClinic_id] = useState(0)
-    const [doctor_id, setDoctor_id] = useState(0)
+    const [clinic_id, setClinic_id] = useState(1)
+    const [doctor_id, setDoctor_id] = useState(1)
     const [startHour, setStartHour] = useState('00:00')
     const [endHour, setEndHour] = useState('23:00')
     const navigate = useNavigate()
 
+    //EC: For selects Clinics and Doctors
+    const [ clinics, setClinics ] = useState( [] )
+    const [ doctors, setDoctors ] = useState( [] )
+
+    //Hook: effect, do something after rendering (EC)
+    useEffect ( ()=> {
+      getAllClinics()
+      getAllDoctors()
+    }, [])//Stop infinite bucle
+
+    const getAllClinics = async () => {
+      const cResponse = await axios.get(`${endpoint}/clinics`)
+      setClinics(cResponse.data)
+    }
+
+    const getAllDoctors = async () => {
+      const dResponse = await axios.get(`${endpoint}/doctors`)
+      setDoctors(dResponse.data)
+    }
+
     const store = async (e) => {
         e.preventDefault()
-        await axios.post(`${endpoint}clidrhours`, {
+        await axios.post(`${endpoint}/clidrhours`, {
           clinic_id: clinic_id,
           doctor_id: doctor_id,
           startHour: startHour,
@@ -31,21 +51,19 @@ const CreateHour = () => {
       <form onSubmit={store}>
         <div className='mb-3'>
           <label className='form-label'>Clinica</label>
-          <input
-            value={clinic_id}
-            onChange={ (e) => setClinic_id(e.target.value)}
-            type='number'
-            className='form-control'
-          />
+          <select className='form-control' onChange={ (e) => setClinic_id(e.target.value)} >
+            {clinics.map( (clinic) => (
+              <option key={clinic.id} value={clinic.id}>{clinic.cliName}</option>
+            ))}
+          </select>
         </div>
         <div className='mb-3'>
           <label className='form-label'>Doctor</label>
-          <input
-            value={doctor_id}
-            onChange={ (e) => setDoctor_id(e.target.value)}
-            type='number'
-            className='form-control'
-          />
+          <select className='form-control' onChange={ (e) => setDoctor_id(e.target.value)} >
+            {doctors.map( (doctor) => (
+              <option key={doctor.id} value={doctor.id}>{doctor.drFirstName} {doctor.drLastName}</option>
+            ))}
+          </select>
         </div>
         <div className='mb-3'>
           <label className='form-label'>Hora de entrada</label>

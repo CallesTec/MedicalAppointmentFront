@@ -25,7 +25,7 @@ const CreateDoctor = () => {
             drPhoneNumber: drPhoneNumber
             
         })
-        navigate('/')
+        navigate('/showDoctors')
     }
 
   return (

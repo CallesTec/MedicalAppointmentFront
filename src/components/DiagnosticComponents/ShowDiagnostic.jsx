@@ -25,7 +25,7 @@ const ShowDiagnostics = () => {
     return (
     <div>
         <div className='d-grid gap-2'>
-            <Link to='/create' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Nuevo</Link>
+            <Link to='/createDiagnostic' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Nuevo</Link>
             <table className='table table-striped'>
                 <thead className='bg-primary text-white'>
                     <tr>
@@ -44,7 +44,7 @@ const ShowDiagnostics = () => {
                             <td> {diagnostic.diaDate} </td>
                             <td> {diagnostic.diaDiagnostic} </td>
                             <td>
-                                <Link to={`/edit/${diagnostic.id}`} className='btn btn-warning'>Editar</Link>
+                                <Link to={`/editDiagnostic/${diagnostic.id}`} className='btn btn-warning'>Editar</Link>
                                 <button onClick={ () => deleteDiagnostic(diagnostic.id) } className='btn btn-danger'>Borrar</button> 
                             </td>
                         </tr>
