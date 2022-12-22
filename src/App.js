@@ -9,9 +9,11 @@ import EditPatient from './components/EditPatient';
 import ShowClinics from './components/ClinicComponents/ShowClinics';
 import CreateClinic from './components/ClinicComponents/CreateClinic';
 import EditClinic from './components/ClinicComponents/EditClinic';
+
 import ShowDoctors from './components/DoctorComponents/ShowDoctors';
 import CreateDoctor from './components/DoctorComponents/CreateDoctor';
 import EditDoctor from './components/DoctorComponents/EditDoctor';
+
 import ShowAppointment from './components/AppointmentComponents/ShowAppointment';
 import CreateAppointment from './components/AppointmentComponents/CreateAppointment';
 import EditAppointment from './components/AppointmentComponents/EditAppointment';
@@ -31,6 +33,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
+          
           <Route path='/show' element={<ShowPatients />} />
           <Route path='/create' element={<CreatePatient />} />
           <Route path='/edit/:id' element={<EditPatient />} />

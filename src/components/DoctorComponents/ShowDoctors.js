@@ -25,7 +25,7 @@ const ShowDoctors = () => {
   return (
     <div>
       <div className='d-grid gap-2'>
-        <Link to='/create' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Nuevo</Link>
+        <Link to='/createDoctor' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Nuevo</Link>
         <table className='table table-striped'>
           <thead className='bg-primary text-white'>
             <tr>
@@ -44,7 +44,7 @@ const ShowDoctors = () => {
                 <td> {doctors.drSpeciality} </td>
                 <td> {doctors.drPhoneNumber} </td>
                 <td>
-                  <Link to={`/edit/${doctors.id}`} className='btn btn-warning'>Editar</Link>
+                  <Link to={`/editDoctor/${doctors.id}`} className='btn btn-warning'>Editar</Link>
                   <button onClick={() => deleteDoctors(doctors.id)} className='btn btn-danger'>Borrar</button>
                 </td>
               </tr>
