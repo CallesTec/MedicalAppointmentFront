@@ -59,7 +59,7 @@ const EditHour = () => {
       <form onSubmit={update}>
       <div className='mb-3'>
           <label className='form-label'>Clinica</label>
-          <select value={clinic_id} className='form-control' onChange={ (e) => setClinic_id(e.target.value)} >
+          <select value={clinic_id} className='form-select' onChange={ (e) => setClinic_id(e.target.value)} >
             {clinics.map( (clinic) => (
               <option key={clinic.id} value={clinic.id}>{clinic.cliName}</option>
             ))}
@@ -67,7 +67,7 @@ const EditHour = () => {
         </div>
         <div className='mb-3'>
           <label className='form-label'>Doctor</label>
-          <select value={doctor_id} className='form-control' onChange={ (e) => setDoctor_id(e.target.value)} >
+          <select value={doctor_id} className='form-select' onChange={ (e) => setDoctor_id(e.target.value)} >
             {doctors.map( (doctor) => (
               <option key={doctor.id} value={doctor.id}>{doctor.drFirstName} {doctor.drLastName}</option>
             ))}

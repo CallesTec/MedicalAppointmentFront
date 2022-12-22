@@ -59,15 +59,17 @@ return (
   <form onSubmit={store}> 
     <div className='mb-3'>
       <label className='form-label'>Clinica</label>
-      <select className='form-control' onChange={ (e) => setClinic_id(e.target.value)} >
-            {clinics.map( (clinic) => (
-              <option key={clinic.id} value={clinic.id}>{clinic.cliName}</option>
-            ))}
-          </select>
+      <select className='form-select' onChange={ (e) => setClinic_id(e.target.value)} >
+        <option selected>Clic aqu&iacute; para seleccionar una cl&iacute;nica</option>
+          {clinics.map( (clinic) => (
+            <option key={clinic.id} value={clinic.id}>{clinic.cliName}</option>
+          ))}
+      </select>
     </div>
     <div className='mb-3'>
       <label className='form-label'>Paciente</label>
-      <select className='form-control' onChange={ (e) => setPatient_id(e.target.value)} >
+      <select className='form-select' onChange={ (e) => setPatient_id(e.target.value)} >
+        <option selected>Clic aqu&iacute; para seleccionar un paciente</option>
         {patients.map( (patient) => (
           <option key={patient.id} value={patient.id}>{patient.patFirstName} {patient.patLastName}</option>
         ))}
@@ -75,7 +77,8 @@ return (
     </div>
     <div className='mb-3'>
       <label className='form-label'>Doctor</label>
-      <select className='form-control' onChange={ (e) => setDoctor_id(e.target.value)} >
+      <select className='form-select' onChange={ (e) => setDoctor_id(e.target.value)} >
+        <option selected>Clic aqu&iacute; para seleccionar un doctor</option>
         {doctors.map( (doctor) => (
           <option key={doctor.id} value={doctor.id}>{doctor.drFirstName} {doctor.drLastName}</option>
         ))}

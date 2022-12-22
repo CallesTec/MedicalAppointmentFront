@@ -77,12 +77,11 @@ const CreatePatient = () => {
         </div>
         <div className='mb-3'>
           <label className='form-label'>¿Tiene seguro?</label>
-          <input
-            value={insurance}
-            onChange={ (e) => setInsurance(e.target.value)}
-            type="number"
-            className='form-control'
-          />
+          <select className='form-select' onChange={ (e) => setInsurance(e.target.value)} >
+            <option selected>Clic aqu&iacute; para seleccionar opci&oacute;n</option>
+            <option key={1} value={1}>Si</option>
+            <option key={0} value={0}>No</option>
+          </select>
         </div>
         <div className='mb-3'>
           <label className='form-label'>Documento de identificacion</label>

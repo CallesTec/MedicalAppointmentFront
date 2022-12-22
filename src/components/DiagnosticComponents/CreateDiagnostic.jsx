@@ -48,7 +48,8 @@ const CreateDiagnostic = () => {
         <form onSubmit={store}>
             <div className='mb-3'>
                 <label>Paciente</label>
-                <select className='form-control' onChange={ (e) => setPatient_id(e.target.value)} >
+                <select className='form-select' onChange={ (e) => setPatient_id(e.target.value)} >
+                    <option selected>Clic aqu&iacute; para seleccionar un paciente</option>
                     {patients.map( (patient) => (
                     <option key={patient.id} value={patient.id}>{patient.patFirstName} {patient.patLastName}</option>
                     ))}
@@ -56,7 +57,8 @@ const CreateDiagnostic = () => {
             </div>
             <div className='mb-3'>
                 <label>Doctor</label>
-                <select className='form-control' onChange={ (e) => setDoctor_id(e.target.value)} >
+                <select className='form-select' onChange={ (e) => setDoctor_id(e.target.value)} >
+                    <option selected>Clic aqu&iacute; para seleccionar un doctor</option>
                     {doctors.map( (doctor) => (
                     <option key={doctor.id} value={doctor.id}>{doctor.drFirstName} {doctor.drLastName}</option>
                     ))}

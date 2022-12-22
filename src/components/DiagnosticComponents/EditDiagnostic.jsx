@@ -59,7 +59,7 @@ const EditDiagnostic = () =>{
         <form onSubmit={update}>
             <div className='mb-3'>
                 <label>Paciente</label>
-                <select className='form-control' onChange={ (e) => setPatient_id(e.target.value)} value={patient_id}>
+                <select className='form-select' onChange={ (e) => setPatient_id(e.target.value)} value={patient_id}>
                     {patients.map( (patient) => (
                     <option key={patient.id} value={patient.id}>{patient.patFirstName} {patient.patLastName}</option>
                     ))}
@@ -67,7 +67,7 @@ const EditDiagnostic = () =>{
             </div>
             <div className='mb-3'>
                 <label>Doctor</label>
-                <select className='form-control' onChange={ (e) => setDoctor_id(e.target.value)} value={doctor_id}>
+                <select className='form-select' onChange={ (e) => setDoctor_id(e.target.value)} value={doctor_id}>
                     {doctors.map( (doctor) => (
                     <option key={doctor.id} value={doctor.id}>{doctor.drFirstName} {doctor.drLastName}</option>
                     ))}
