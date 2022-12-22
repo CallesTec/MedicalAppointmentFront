@@ -28,7 +28,7 @@ const EditAppointments = () => {
             apDate: apDate,
             apReason: apReason
         })
-        navigate('/')
+        navigate('/showAppointment')
     }
 
     const getAllClinics = async () => {

@@ -50,7 +50,7 @@ const store = async (e) => {
         apDate: apDate,
         apReason: apReason
     })
-    navigate('/')
+    navigate('/showAppointment')
 }
 
 return (

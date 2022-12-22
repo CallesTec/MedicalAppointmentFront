@@ -2,7 +2,7 @@ import axios from "axios";
 import React, {useState, useEffect} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const endpoint = 'http://localhost:8000/api/doctors'
+const endpoint = "http://localhost:8000/api"
 
 const EditPatient = () => {
     //EC: Initialize vriables
@@ -17,22 +17,22 @@ const EditPatient = () => {
 
     const update = async (e) => {
         e.preventDefault()
-        await axios.put(`${endpoint}${id}`, {
+        await axios.put(`${endpoint}/doctors/${id}`, {
             drLastName: drLastName,
             drFirstName: drFirstName,
             drSpeciality: drSpeciality,
             drPhoneNumber: drPhoneNumber
         })
-        navigate('/')
+        navigate('/showDoctors')
     }
     
     useEffect( () =>{
         const getDoctorById = async () => {
-            const response = await axios.get(`${endpoint}${id}`)
-            setdrLastName(response.data.setdrLastName)
-            setdrFirstName(response.data.setdrFirstName)
-            setdrSpeciality(response.data.setdrSpeciality)
-            setdrPhoneNumber(response.data.setdrPhoneNumber)
+            const response = await axios.get(`${endpoint}/doctors/${id}`)
+            setdrLastName(response.data.drLastName)
+            setdrFirstName(response.data.drFirstName)
+            setdrSpeciality(response.data.drSpeciality)
+            setdrPhoneNumber(response.data.drPhoneNumber)
         }
         getDoctorById()
         // eslint-disable-next-line react-hooks/exhaustive-deps
