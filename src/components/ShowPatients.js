@@ -24,11 +24,11 @@ const ShowPatients = () => {
   }
 
   return (
-    <div>
+    <div className='container'>
       <div className='d-grid gap-2'>
         <Link to='/create' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Nuevo</Link>
         <table className='table table-striped'>
-          <thead className='bg-primary text-white'>
+          <thead className='bg-dark text-white'>
             <tr>
               <th>Nombre</th>
               <th>Apellido</th>
@@ -45,7 +45,7 @@ const ShowPatients = () => {
                 <td> {patient.patPhoneNumber} </td>
                 <td> {patient.patEmail} </td>
                 <td>
-                  <Link to={`/edit/${patient.id}`} className='btn btn-warning'>Editar</Link>
+                  <Link to={`/edit/${patient.id}`} className='btn btn-warning mx-2'>Editar</Link>
                   <button onClick={() => deletePatient(patient.id)} className='btn btn-danger'>Borrar</button>
                 </td>
               </tr>

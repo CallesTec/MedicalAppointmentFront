@@ -53,7 +53,7 @@ const EditPatient = () => {
     }, [])
 
   return (
-    <div>
+    <div className="container">
       <h3>Editar Paciente</h3>
       <form onSubmit={update}>
         <div className='mb-3'>
