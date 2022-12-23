@@ -49,7 +49,7 @@ const cards = [
     id: 6,
     title: "Diagnósticos",
     image: image6,
-    url: "/showDiagnostic",
+    url: "/homeDiagnostic",
     text: "Proceso en el que se identifica una enfermedad, afección o lesión por sus signos y síntomas. Para ayudar a hacer un diagnóstico, se pueden utilizar los antecedentes de salud o realizar un examen físico y pruebas, como análisis de sangre, pruebas con imágenes y biopsias."
   },
 

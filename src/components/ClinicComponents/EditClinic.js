@@ -2,7 +2,7 @@ import axios from "axios";
 import React, {useState, useEffect} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const endpoint = 'http://localhost:8000/api/clinics'
+const endpoint = "http://localhost:8000/api"
 
 const EditClinic = () => {
     //EC: Initialize vriables
@@ -16,27 +16,27 @@ const EditClinic = () => {
 
     const update = async (e) => {
         e.preventDefault()
-        await axios.put(`${endpoint}${id}`, {
+        await axios.put(`${endpoint}/clinics/${id}`, {
             cliName: cliName,
             cliAddress: cliAddress,
             cliPhoneNumber: cliPhoneNumber
         })
-        navigate('/')
+        navigate('/showClinics')
     }
     
     useEffect( () =>{
         const getClinicById = async () => {
-            const response = await axios.get(`${endpoint}${id}`)
-            setcliName(response.data.setcliName)
-            setcliAddress(response.data.setcliAddress)
-            setcliPhoneNumber(response.data.setcliPhoneNumber)
+            const response = await axios.get(`${endpoint}/clinics/${id}`)
+            setcliName(response.data.cliName)
+            setcliAddress(response.data.cliAddress)
+            setcliPhoneNumber(response.data.cliPhoneNumber)
         }
         getClinicById()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [] )
 
     return (
-        <div>
+        <div className=" app container bg-dark text-white text-center "  >
         <h3>Edit Clinic</h3>
         <form onSubmit={update}>
             <div className='mb-3'>
@@ -66,7 +66,7 @@ const EditClinic = () => {
                     className='form-control'
                 />
             </div>
-            <button type='submit' className='btn btn-primary'>Update</button>
+            <button type='submit' className='btn btn-secondary mb-3'>Actualizar</button>
         </form>
     </div>
     )

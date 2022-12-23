@@ -43,8 +43,8 @@ const CreateDiagnostic = () => {
     }
 
   return (
-    <div>
-        <h3>Crear diagnostic</h3>
+    <div className='app container bg-dark text-white text-center'>
+        <h3>Crear diagnostico</h3>
         <form onSubmit={store}>
             <div className='mb-3'>
                 <label>Paciente</label>
@@ -82,7 +82,7 @@ const CreateDiagnostic = () => {
                     className='form-control'
                 />
             </div>
-            <button type='submit' className='btn btn-primary' >Guardar</button>
+            <button type='submit' className='btn btn-secondary mb-3' >Guardar</button>
         </form>
     </div>
   )

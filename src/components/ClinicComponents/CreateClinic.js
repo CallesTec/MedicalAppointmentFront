@@ -27,7 +27,7 @@ const CreateClinic = () => {
     }
 
   return (
-    <div>
+    <div className='app container bg-dark text-white text-center' >
       <h3>Nueva Clínica</h3>
       <form onSubmit={store}>
         <div className='mb-3'>
@@ -57,7 +57,7 @@ const CreateClinic = () => {
             className='form-control'
           />
         </div>
-        <button type='submit' className='btn btn-primary'>Guardar</button>
+        <button type='submit' className='btn btn-secondary mb-3'>Guardar</button>
       </form>
     </div>
   )

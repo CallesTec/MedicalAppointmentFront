@@ -27,6 +27,7 @@ import HomeDoctors  from './components/HomeDoctors';
 import HomeAppointment  from './components/HomeAppointment';
 import HomeHour  from './components/HomeHour';
 import HomeClinic from './components/HomeClinic';
+import HomeDiagnostic from './components/HomeDiagnostic';
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
           <Route path='/homeAppointment' element={<HomeAppointment/>} /> 
           <Route path='/homeHour' element={<HomeHour/>} /> 
           <Route path='/homeClinic' element={<HomeClinic/>} /> 
+          <Route path='/homeDiagnostic' element={<HomeDiagnostic/>} /> 
         </Routes>
       </BrowserRouter>
     </div>
