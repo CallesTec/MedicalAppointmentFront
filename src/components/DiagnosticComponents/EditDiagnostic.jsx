@@ -74,7 +74,7 @@ const EditDiagnostic = () =>{
                 </select>
             </div>
             <div className='mb-3'>
-            <label className='form-label'>Hora de entrada</label>
+            <label className='form-label'>Fecha</label>
             <input
                 value={date}
                 onChange={ (e) => setDate(e.target.value)}
@@ -83,7 +83,7 @@ const EditDiagnostic = () =>{
             />
             </div>
             <div className='mb-3'>
-            <label className='form-label'>Hora de salida</label>
+            <label className='form-label'>Diagnostico</label>
             <input
                 value={diagnostic}
                 onChange={ (e) => setDiagnostic(e.target.value)}
