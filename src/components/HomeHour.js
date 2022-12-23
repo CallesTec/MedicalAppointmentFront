@@ -32,7 +32,7 @@ class HomeHour extends Component {
                             <div className='card bg-dark card-body '>
                             <p class="text-white" >
                             <h4> Horarios de Servicio en el Sistema de Citas Médicas </h4>
-                                <img src={logo} height="205px" />
+                                <img src={logo} height="205px" alt="logo hour"/>
                             </p>
                             </div>
                             </p>

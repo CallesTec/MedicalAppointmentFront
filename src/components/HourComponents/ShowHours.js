@@ -35,7 +35,7 @@ const ShowHours = () => {
 
 
   const deleteHour = async (id) => {
-    await axios.delete(`${endpoint}/clidrhours/${id}`)
+    await axios.delete(`${endpoint}/cli_dr_hours/${id}`)
     getAllHours()
   }
 

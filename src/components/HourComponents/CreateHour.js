@@ -36,7 +36,7 @@ const CreateHour = () => {
 
     const store = async (e) => {
         e.preventDefault()
-        await axios.post(`${endpoint}/clidrhours`, {
+        await axios.post(`${endpoint}/cli_dr_hours`, {
           clinic_id: clinic_id,
           doctor_id: doctor_id,
           startHour: startHour,

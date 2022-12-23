@@ -19,7 +19,7 @@ const EditHour = () => {
 
     const update = async (e) => {
       e.preventDefault()
-      await axios.put(`${endpoint}/clidrhours/${id}`, {
+      await axios.put(`${endpoint}/cli_dr_hours/${id}`, {
         clinic_id: clinic_id,
         doctor_id: doctor_id,
         startHour: startHour,
@@ -30,7 +30,7 @@ const EditHour = () => {
 
     useEffect( () =>{
       const getHourById = async () => {
-            const response = await axios.get(`${endpoint}/clidrhours/${id}`)
+            const response = await axios.get(`${endpoint}/cli_dr_hours/${id}`)
             //console.log(response.data) //EC: Only for view response.data in browser terminal
             setClinic_id(response.data.clinic_id)
             setDoctor_id(response.data.doctor_id) 

@@ -26,7 +26,7 @@ export const getAllClinics = async () => {
 };
 
 export const getAllHours = async () => {
-  const response = await axios.get(`${endpoint}/clidrhours`)
+  const response = await axios.get(`${endpoint}/cli_dr_hours`)
   return response.data;
 }
 

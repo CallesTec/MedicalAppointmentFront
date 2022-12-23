@@ -32,7 +32,7 @@ class HomeClinic extends Component {
                             <div className='card bg-dark card-body '>
                             <p class="text-white" >
                             <h4>Clínicas de Atención en el Sistema de Citas Médicas </h4>
-                                <img src={logo} height="205px" />
+                                <img src={logo} height="205px" alt="logo clinic"/>
                             </p>
                             </div>
                             </p>

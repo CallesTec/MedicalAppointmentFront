@@ -32,7 +32,7 @@ class HomeAppointment extends Component {
                             <div className='card bg-dark card-body '>
                             <p class="text-white" >
                             <h4> Citas Médicas Registradas en el Sistema de Citas Médicas </h4>
-                                <img src={logo} height="205px" />
+                                <img src={logo} height="205px" alt="logo appointment"/>
                             </p>
                             </div>
                             </p>

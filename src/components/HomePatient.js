@@ -32,7 +32,7 @@ class HomePatient extends Component {
                             <div className='card bg-dark card-body '>
                             <p class="text-white" >
                             <h4> Usuarios del Sistema de Citas Médicas </h4>
-                                <img src={logo} height="205px" />
+                                <img src={logo} height="205px" alt="logo patient"/>
                             </p>
                             </div>
                             </p>
