@@ -39,7 +39,7 @@ const CreateDiagnostic = () => {
             diaDate : date,
             diaDiagnostic : diagnostic
          })
-         navigate('/')
+         navigate('/showDiagnostic')
     }
 
   return (
