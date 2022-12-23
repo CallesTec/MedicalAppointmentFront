@@ -12,3 +12,7 @@
   );
 }
 
+.text{
+  color: gray;
+  text-align: right;
+}

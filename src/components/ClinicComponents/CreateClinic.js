@@ -23,7 +23,7 @@ const CreateClinic = () => {
             cliPhoneNumber: cliPhoneNumber
             
         })
-        navigate('/')
+        navigate('/showClinics')
     }
 
   return (

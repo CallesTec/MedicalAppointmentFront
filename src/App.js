@@ -1,4 +1,8 @@
 import './App.css';
+import { LoginButton } from './components/Login/Login';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Profile } from './Profile';
+import { LogoutButton } from './components/Login/Logout';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -30,8 +34,14 @@ import HomeClinic from './components/HomeClinic';
 import HomeDiagnostic from './components/HomeDiagnostic';
 
 function App() {
+
+  const {isAuthenticated} = useAuth0();
+
   return (
     <div className="App">
+     {isAuthenticated ? ( <>
+      <p className='text'><Profile /></p>
+      <LogoutButton />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -67,6 +77,11 @@ function App() {
           <Route path='/homeDiagnostic' element={<HomeDiagnostic/>} /> 
         </Routes>
       </BrowserRouter>
+
+      </> ) :
+
+    (<LoginButton />)}
+    
     </div>
   );
 }
